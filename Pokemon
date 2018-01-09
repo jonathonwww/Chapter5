@@ -1,0 +1,28 @@
+public abstract class Pokemon {
+    
+    private int idNum;
+    private static int nextId = 1;
+    private int hp;
+    private String name;
+    private String type;
+    public Pokemon(String n, String t, int h) {
+        name = n;
+        type = t;
+        hp = h;
+        idNum= nextId++;
+    }
+    
+    @Override
+    public boolean equals(Object o){
+        if (o instanceof Pokemon)
+            return this.name.equals(((Pokemon)o).name);
+        else 
+            return false;
+    }
+    
+    public abstract void attack();
+    
+    public String toString() {
+        return "ID: " + idNum + "\nName: " + name + " Type: " + type + " HP " + hp;
+    }
+}
