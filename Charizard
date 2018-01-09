@@ -1,0 +1,9 @@
+public class Charizard extends Pokemon {
+    
+    public Charizard (String n, String t, int h){
+        super(n, t, h);
+    }
+    public void attack() {
+        System.out.println("Charizard attack");
+    }
+}
