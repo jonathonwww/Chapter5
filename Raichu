@@ -1,0 +1,17 @@
+public class Raichu extends Pokemon {
+    
+    private String location;
+    
+    public Raichu (String n, String t, int h, String l){
+        super(n, t, h);
+        location = l;
+    }
+    
+    public void attack() {
+        System.out.println("Raichu attack");
+    }
+    
+    public void energize(){
+        System.out.println("energize");
+    }
+}
