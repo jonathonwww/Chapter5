@@ -1,0 +1,23 @@
+public class PokemonTest {
+    
+    public static void main(String[] args) {
+        
+        Pokemon[] deck = new Pokemon[3];
+        
+        deck[0] = new Charizard("Charizard", "fire", 120);
+        deck[1] = new Raichu("Raichu", "electric", 100, "Meadow");
+        deck[2] = new Charizard("Charizard", "fire", 120);
+        
+        System.out.println("\f");
+        
+        for (Pokemon i : deck) {
+            System.out.println(i);
+            i.attack();
+            if (i instanceof Raichu)
+                ((Raichu)i).energize();
+        }
+        
+        System.out.println(deck[0].equals(deck[2]));
+        
+    }
+}
