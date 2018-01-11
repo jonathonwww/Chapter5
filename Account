@@ -1,0 +1,115 @@
+/**
+ *  A bank account class with methods to deposit to, withdraw from,
+ *  change the name on, and get a String representation
+ *  of the account.
+ *  
+ *  @author Jonathon Webster
+ *  @version 1/11/18
+ */
+public class Account
+{
+    private double balance;
+    private String name;
+    private int acctNum;
+    
+    /**
+     * Constructor -- initializes balance, owner, and account number
+     * @param initBal - the initial balance
+     * @param owner - the owner's name
+     * @param number - the account number
+     */
+    public Account(double initBal, String owner, int number)
+    {
+        balance = initBal;
+        name = owner;
+        acctNum = number;
+    }
+
+    /**
+     * Constructor-- initializes balance, and owner; chooses random account number
+     * @param initBal - the initial balance
+     * @param owner - the owner's name
+     */
+    public Account (double initBal, String owner){
+        balance = initBal;
+        name = owner;
+        acctNum = (int)Math.random()*9999 + 1000;
+    }
+
+    /**
+     * Constructor- initializes owner, sets balance to zero, and chooses a random account number
+     * @param owner - the owner's name
+     */
+    public Account (String owner){
+        name = owner;
+        acctNum = (int)Math.random()*9999+1000;
+    }
+
+    /**
+     *  Checks to see if balance is sufficient for withdrawal.
+     *  If so, decrements balance by amount; if not, prints message.
+     *  @param amount - amount to be withdawled
+     */
+    public void withdraw(double amount)
+    {
+        if (balance >= amount){
+            balance -= amount;
+            System.out.println("Withdraw $" + amount + " from " +
+                name + "'s account. New balance is $" + balance + ".");
+        }
+        else
+            System.out.println("Insufficient funds");
+    }
+
+    /**
+     *  Checks to see if balance is sufficient for withdrawal + tax.
+     *  If so, decrements balance by amount; if not, prints message.
+     *  @param amount - amount to be withdawled
+     *  @param tax - the tax on the withdrawl
+     */
+    public void withdraw(double amount, double tax)
+    {
+        if (balance >= (amount + tax)){
+            balance -= (amount + tax);
+            System.out.println("Withdraw $" + amount + " plus $" + tax + " fee from " +
+                name + "'s account. New balance is $" + balance + ".");
+        }
+        else
+            System.out.println("Insufficient funds");
+    }
+
+    /**
+     *  Adds deposit amount to balance.
+     *  @param amount - amount of $ getting deposited
+     */
+    public void deposit(double amount)
+    {
+        balance += amount;
+    }
+
+    /**
+     * Returns balance.
+     * @return balance
+     */
+    public double getBalance()
+    {
+        return balance;
+    }
+
+    /**
+     *  Returns account name.
+     *  @return name
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
+    /**
+     * this returns the owner's name, account number, and balance
+     * @return balance, acctNum, name
+     */
+    public String toString(){
+        return name + "’s account number is " + acctNum + ". Balance is $" + balance +".";
+    }
+}
