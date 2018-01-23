@@ -1,0 +1,12 @@
+/**
+ * This class transfers money from accounts.
+ * @author Jonathon Webster
+ * @version 1/23/18
+ */
+public class TransferTest {
+    
+    public static void main(String[] args) {
+        
+        Account acct1 = new Account(1000, "John");
+        Account acct2 = new Account(1000, 
+    
