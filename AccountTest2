@@ -1,0 +1,27 @@
+import java.util.*;
+public class AccountTest2 {
+    
+    public static void main(String [] args) {
+        
+        Scanner scan = new Scanner(System.in);
+        String name;
+        int numacc;
+        
+        System.out.println("\fHow many accounts will you be creating?");
+        numacc = scan.nextInt();
+        Account[] acc = new Account[numacc];
+        
+        for (int i = 0; i < numacc; i++) {
+            System.out.println("Enter the name of account #" + (i+1));
+            name = scan.next();
+            acc[i] = new Account(100, name);
+            System.out.println();
+            System.out.println(acc[i]);
+            System.out.println(acc[i].getNextNum());
+            System.out.println();
+        }
+        
+        System.out.println("End of program. Goodbye.");
+    }
+}
+        
