@@ -1,12 +1,73 @@
+import java.util.Scanner;
 /**
  * This class transfers money from accounts.
  * @author Jonathon Webster
  * @version 1/23/18
  */
 public class TransferTest {
-    
+
     public static void main(String[] args) {
-        
+
+        System.out.println("\f");
+        Scanner scan = new Scanner(System.in);
         Account acct1 = new Account(1000, "John");
-        Account acct2 = new Account(1000, 
-    
+        Account acct2 = new Account(1000, "Sally");
+        int x = 0;
+        Jhonny:
+        while (x != 3) {
+            System.out.println("Testing Regular Method");
+            System.out.println("1 – Transfer from John to Sally’s account.\n" +
+                               "2 – Transfer from Sally to John’s account.\n" +
+                               "3 - Quit\n" +
+                               "Enter the number to choose an option from above:");
+            x = scan.nextInt();
+            if (x==3){
+                break Jhonny;
+            }
+            System.out.println("How much would you like to transfer?");
+            double amount = scan.nextDouble();
+            if (x==1) {
+                acct1.transfer(amount, acct2);
+                System.out.println();
+                System.out.println(acct1);
+                System.out.println(acct2);
+            }
+            else {
+                acct2.transfer(amount, acct1);
+                System.out.println();
+                System.out.println(acct2);
+                System.out.println(acct1);
+            }
+            System.out.println();
+        }
+        x=0;
+        Hi:
+         while (x != 3) {
+            System.out.println("Testing Static Method");
+            System.out.println("1 – Transfer from John to Sally’s account.\n" +
+                               "2 – Transfer from Sally to John’s account.\n" +
+                               "3 - Quit\n" +
+                               "Enter the number to choose an option from above:");
+            x = scan.nextInt();
+            if (x==3)
+                break Hi;
+            System.out.println("How much would you like to transfer?");
+            double amount = scan.nextDouble();
+            if (x==1) {
+                Account.transfer(amount, acct1, acct2);
+                System.out.println();
+                System.out.println(acct1);
+                System.out.println(acct2);
+            }
+            else {
+                Account.transfer(amount, acct2, acct1);
+                System.out.println();
+                System.out.println(acct2);
+                System.out.println(acct1);
+            }
+            System.out.println();
+        }
+
+        }
+    }
+
