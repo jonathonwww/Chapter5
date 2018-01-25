@@ -120,7 +120,7 @@ public class Account
      * this class returns the next ID number
      * @return nextAccountNum
      */
-    public static String getNextNum(){
-        return "Next ID number is " + nextAccountNum;
+    public static int getNextNum(){
+        return nextAccountNum;
     }
 }
