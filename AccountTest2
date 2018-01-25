@@ -17,11 +17,10 @@ public class AccountTest2 {
             acc[i] = new Account(100, name);
             System.out.println();
             System.out.println(acc[i]);
-            System.out.println(acc[i].getNextNum());
+            System.out.println("The next account number is " + Account.getNextNum());
             System.out.println();
         }
         
         System.out.println("End of program. Goodbye.");
     }
 }
-        
