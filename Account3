@@ -57,8 +57,8 @@ public class Account
     {
         if (balance >= amount){
             balance -= amount;
-            System.out.println("Withdraw $" + amount + " from " +
-                name + "'s account. New balance is $" + balance + ".");
+            System.out.println("Withdrew $" + amount + "0 from " +
+                name + "'s account. New balance is $" + (int)(balance*100)/100.0 + "0.");
         }
         else
             System.out.println("Insufficient funds");
@@ -75,7 +75,7 @@ public class Account
         if (balance >= (amount + tax)){
             balance -= (amount + tax);
             System.out.println("Withdraw $" + amount + " plus $" + tax + " fee from " +
-                name + "'s account. New balance is $" + balance + ".");
+                name + "'s account. New balance is $" + balance + "0.");
         }
         else
             System.out.println("Insufficient funds");
@@ -109,14 +109,26 @@ public class Account
     }
     
     /**
-     * This class transfers the funds from one account to another
-     * @return the amount transfered
+     * This method transfers the funds from one account to another
+     * gives the amount transfered
+     * @param d = amount to be transfered
+     * @param o = the acount recieving the money
      */
-    public void transfer(double d, Object o){
-        Account t = (Account)o;
+    public void transfer(double d, Account o){
         this.withdraw(d);
-        t.deposit(d);
-        System.out.println("Transfered $" + d + " from " + this.name + "'s account to " + t.name + "'s account.");
+        o.deposit(d);
+        System.out.println("Transfered $" + d + " from " + this.name + "'s account to " + o.name + "'s account.");
+    }
+    
+    /**
+     * This method transfers the funds from one account to another
+     * by redirecting to the other transfer method
+     * @param d = amount transfered
+     * @param o = account losing money
+     * @param p = account gaining the money
+     */
+    public static void transfer(double d, Account o, Account p){
+        o.transfer(d, p);
     }
     
     /**
@@ -124,7 +136,7 @@ public class Account
      * @return balance, acctNum, name
      */
     public String toString(){
-        return name + "’s account number is " + acctNum + ". Balance is $" + balance +".";
+        return name + "’s account number is " + acctNum + ". Balance is $" + balance +"0.";
     }
 
     /**
