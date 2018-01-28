@@ -1,0 +1,51 @@
+/**
+ * This driver program prints and compares a series of different tasks
+ * @author Jonathon Webster
+ * @version 1/28/18
+ */
+public class TaskTest {
+	
+	public static void main(String[] args) {
+		
+		System.out.println("\f");
+		Task t1 = new Task("Eat");
+		Task t2 = new Task("Sleep");
+		Task t3 = new Task ("Watch TV");
+		Task t4 = new Task ("Finish APCS programs");
+		Task t5 = new Task ("Exercise");
+		
+		t1.setPriority(Priority.MID_PRIORITY);
+		t2.setPriority(Priority.MIN_PRIORITY);
+		t3.setPriority(Priority.MAX_PRIORITY);
+		t4.setPriority(6);
+		t5.setPriority(9);
+		
+		System.out.println(t1);
+		System.out.println(t2);
+		System.out.println(t3);
+		System.out.println(t4);
+		System.out.println(t5);
+		
+		comparePriorities(t1,t2);
+		comparePriorities(t1,t3);
+		comparePriorities(t1,t4);
+		comparePriorities(t1,t5);
+	}
+	
+	public static void comparePriorities(Task a, Task b) {
+		int p = a.compareTo(b);
+		if (p == 0) {
+			System.out.println("\"" + a.getName() + "\" has the same " +
+								"priority as \"" + b.getName() + "\".");
+		}
+		else if(p==1){
+			System.out.println("\"" + a.getName() + "\" has a higher " +
+					"priority than \"" + b.getName() + "\".");
+		}
+		else {
+			System.out.println("\"" + a.getName() + "\" has a lower " +
+					"priority than \"" + b.getName() + "\".");
+		}
+			
+	}
+}
