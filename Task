@@ -1,0 +1,66 @@
+/**
+ * This class creates different priorities and allows for 
+ * comparisons between different priorities to be made.
+ * @author Jonathon Webster
+ * @version 1/28/18
+ */
+public class Task implements Priority, Comparable{
+	private String priName;
+	private int priNum;
+	/**
+	 * This constructor takes the name of the task.
+	 * @param a
+	 */
+	public Task(String a) {
+		priName = a;
+	}
+	
+	/**
+	 * This gets the name of the priority
+	 * @return priName
+	 */
+	public String getName() {
+		return priName;
+	}
+	
+	/**
+	 * This gets the priorities number
+	 * @return priNum
+	 */
+	public int getPriority() {
+		return priNum;
+	}
+	
+	/**
+	 * This sets the priority's number to the parameter
+	 * @param a
+	 */
+	public void setPriority(int a) {
+		priNum = a;
+	}
+	
+	/**
+	 * This method returns the task and priority number
+	 * @return priName and priNum in a String
+	 */
+	public String toString() {
+		return "Task: " + priName + ". Priority: " + priNum + ".";
+	}
+	
+	/**
+	 * This program judges weather the tasks have greater
+	 * than, equal to, or less than priorities
+	 * @param o
+	 * @return 0 if equal, 1 if greater, -1 if less
+	 */
+	public int compareTo(Object o) {
+		Task a = (Task)o;
+		if (a.getPriority() == this.getPriority()) 
+			return 0;
+		else if (this.getPriority() > a.getPriority())
+			return 1;
+		else 
+			return -1;
+		}
+	
+}
