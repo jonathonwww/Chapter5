@@ -1,0 +1,13 @@
+/**
+ * This interface provides two classes and three variables that 
+ * all have to do with priorities
+ * @author Jonathon Webster
+ * @version 1/28/18
+ */
+public interface Priority {
+	final static int  MIN_PRIORITY = 1;
+	final static int MID_PRIORITY = 5;
+	final static int MAX_PRIORITY = 10;
+	public int getPriority() ;
+	public void setPriority(int a);
+}
