@@ -1,0 +1,59 @@
+import edu.cmu.ri.createlab.terk.robot.finch.Finch;
+public class FarmFinch
+{
+    public static Finch myFinch = new Finch();
+    public static void main(final String[] args)
+    {
+        playAnimal("Duck");
+        playAnimal("Cow");
+        playAnimal("Sheep");
+        playAnimal("Horse");
+        // Always end your program with finch.quit()
+        myFinch.quit();
+        System.exit(0);
+    }
+
+    public static boolean playAnimal(String a)
+    {
+        if (a.equals("Duck"))
+        {
+            duck();
+            return true;
+        }
+        else if (a.equals("Cow") 
+        {
+            cow();
+            return true;
+        }
+        else if (a.equals("Sheep") 
+        {
+            sheep();
+            return true;
+        }
+        else if (a.equals("Horse") 
+        {
+            horse();
+            return true;
+        }
+        else return false;
+    }
+    
+    public static void cow()
+    {
+        myFinch.saySomething("i am a cow");
+        myFinch.setWheelVelocities(10,10,7);
+    }
+    
+    public static void horse()
+    
+    public static void duck()
+    {
+        myFinch.saySomething("i am a duck");
+        
+        for ( int i= 7; i < 7; i++) {
+            myFinch.setWheelVelocities(0, 100, 1); 
+            myFinch.setWheelVelocities(100, 0, 1);
+        }
+        // Add code to make the finch behave like a duck.
+    }
+}
